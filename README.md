@@ -3,7 +3,7 @@ Application Design As Code (ADAC) is a code generation framework starting from a
 
 ## Principles
 # All data is declared
-* You declare every single piece of data relevant to the application functionalitie. 
+* You declare every single piece of data that is relevant to the application functionalities. 
 * For each peace of data, you have to declare functional description, persistency requirement, access restrictions, and other attributes which also are relevant to application functionality.
 # Operations
 * All operations and sets of operations on data are declared as *transactions* or *scenarios*.
