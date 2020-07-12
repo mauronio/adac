@@ -9,7 +9,9 @@ data:
     - customer:
       - description: Customer details
       - attributes:
-        - id: Unique identifier
+        - id: 
+          - description: Unique identifier
+          - key
         - first-name: First Name
         - last-name: Last Name
         - birth-date: Date of Birth
@@ -21,22 +23,23 @@ data:
             - none-of-your-business
     - work-order:
       - description: Work order details
+      - id: 
+        - description: Unique identifier
+        - key
       - attributes:
         - id: Work Order identifier
         - customer-id: Customer id
         - total: Total amount
       - references:
-        - item:
+        - inventory-item:
           - id: item identifier
           - quantity: item quantity
-    -item: 
+    - inventory-item: 
       - description: inventory item
       - attributes:
-        - id: Item identifier
+        - id:
+          - description: Item identifier
+          - key
         - description: Description 
         - qt-remaining: remaining quantity in inventory
         - unit-price: Price per item unit
-
-
-
-
