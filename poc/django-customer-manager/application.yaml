@@ -1,0 +1,42 @@
+title: Customer manager
+description: Simple customer management application
+version: 1.0
+data:
+  - description: Data
+  - default-tags:
+    - persistent
+  - entities:
+    - customer:
+      - description: Customer details
+      - attributes:
+        - id: Unique identifier
+        - first-name: First Name
+        - last-name: Last Name
+        - birth-date: Date of Birth
+        - gender: 
+          - description: Customer gender
+          - choices:
+            - male
+            - female
+            - none-of-your-business
+    - work-order:
+      - description: Work order details
+      - attributes:
+        - id: Work Order identifier
+        - customer-id: Customer id
+        - total: Total amount
+      - references:
+        - item:
+          - id: item identifier
+          - quantity: item quantity
+    -item: 
+      - description: inventory item
+      - attributes:
+        - id: Item identifier
+        - description: Description 
+        - qt-remaining: remaining quantity in inventory
+        - unit-price: Price per item unit
+
+
+
+
