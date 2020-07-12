@@ -32,5 +32,9 @@ The application specification is described in the *application.yaml* file, which
 It includes the following sections:
 ## Data
 Data is organized as *attributes* and *entities*. Entities are sets of *attributes*. Entities and attributes have functional descriptions.
+
 The only allowed metadata is declared as *tags*. A tag is a specific functional aspect that may or may not be taken into consideration when generating code. Examples of functional tags are *persistent* (for entities), *non-persistent* (for attributes we dont need to be persistent even though the enclosing entity has to persist), or *indentifier* (for attributes that identify the enclosing entity).  
-Any language/framework specific tag that may make sense to a specific code generation provider, must be declared in a specific application mapper file for that generation provider.
+
+Any language/framework specific tag that may make sense to a specific code generation provider, must be declared in a specific *application mapper* file for that generation provider.
+
+Attribute types and formats are not defined at this level. Application mapper files handle language-specific metadata. 
