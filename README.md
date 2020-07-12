@@ -27,3 +27,10 @@ Application Design As Code (ADAC) is a code generation framework starting from a
 * For code generation, and code generation orchestration, any extra complexity derived from language, framework or technology, is delegated to code generation providers.
 * Code generation orchestration providers are called builder providers, which implement build services. The default build provider will be the default-python-builder, which orchestrate the code generations based on the YAML application declaration. 
 * Code generation orchestrators must be given the code generation providers that they have to orchestrate. We can define code generation providers for DJango, AngularJS, Java SpringBoot, Fn functions, Python Flask microservices or any other language/framework of our interest. 
+# Application specification file
+The application specification is described in the *application.yaml* file, which is the main input for all orchestrators and code generators.
+It includes the following sections:
+## Data
+Data is organized as *attributes* and *entities*. Entities are sets of *attributes*. Entities and attributes have functional descriptions.
+The only allowed metadata is declared as *tags*. A tag is a specific functional aspect that may or may not be taken into consideration when generating code. Examples of functional tags are *persistent* (for entities), *non-persistent* (for attributes we dont need to be persistent even though the enclosing entity has to persist), or *indentifier* (for attributes that identify the enclosing entity).  
+Any language/framework specific tag that may make sense to a specific code generation provider, must be declared in a specific application mapper file for that generation provider.
