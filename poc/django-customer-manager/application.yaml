@@ -2,44 +2,21 @@ title: Customer manager
 description: Simple customer management application
 version: 1.0
 data:
-  - description: Data
-  - default-tags:
-    - persistent
-  - entities:
-    - customer:
-      - description: Customer details
-      - attributes:
-        - id: 
-          - description: Unique identifier
-          - key
-        - first-name: First Name
-        - last-name: Last Name
-        - birth-date: Date of Birth
-        - gender: 
-          - description: Customer gender
-          - choices:
-            - male
-            - female
-            - none-of-your-business
-    - work-order:
-      - description: Work order details
-      - id: 
-        - description: Unique identifier
-        - key
-      - attributes:
-        - id: Work Order identifier
-        - customer-id: Customer id
-        - total: Total amount
-      - references:
-        - inventory-item:
-          - id: item identifier
-          - quantity: item quantity
-    - inventory-item: 
-      - description: inventory item
-      - attributes:
-        - id:
-          - description: Item identifier
-          - key
-        - description: Description 
-        - qt-remaining: remaining quantity in inventory
-        - unit-price: Price per item unit
+  - description: Application Data
+  - import
+    - name: model
+    - namespace: default
+  - vars:
+    - session-config:
+      - authenticated-user: Session User
+  - constants:
+    - application-name: Customer Manager
+operations:
+  - description: Application Operations
+  - import
+    - name: transactions
+    - namespace: default
+  - import
+    - name: scenarios
+    - namespace: default
+  
