@@ -1,0 +1,19 @@
+project_name: Customer Manager
+
+application_layers:
+  database:
+    builder_name: sql_basic 
+    backend_server: mariadb10
+  persistence:
+    builder_name: python3_persistence_basic 
+    db_backend_client: mysql
+    api_framework: flask2
+    api_protocol: rest
+  business:
+    builder_name: python3_business_basic 
+    api_framework: flask2
+    api_protocol: rest
+    persistence_integration: rest
+  ui:
+    builder_name: python3_pyramid2_basic 
+    business_integration: rest
